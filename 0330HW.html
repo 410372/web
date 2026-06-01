@@ -1,8 +1,83 @@
 <html>
     <head>
         <title>作業-七巧板</title>
-        <stytle>
+        <style>
+            #t1{
+                width: 0px;
+                height: 0px;
+                border: solid 5px transparent;
+                border-bottom-color: green;
+                border-width: 0px 15px 20px 15px;
+                margin:0 0 0 10px;
+            }
+            #t2{
+                width: 15px;
+                height: 0px;
+                border: solid 13px green;
+                border-color: transparent transparent green transparent;
+                border-top-width: 0;
+                margin: 0 0 0 5px;
+            }
+            #t3{
+                width: 20px;
+                height: 0px;
+                border: solid 15px green;
+                border-color: transparent transparent green transparent;
+                border-top-width: 0;
+                margin-bottom: 0px;
+            }
+            #t4{
+                width: 0px;
+                height: 0px;
+                border: solid 5px black;
+                border-color: rgb(58,4,4);
+                border-width: 10px 9px 15px 9px;
+                border-top-width: 0;
+                margin: 0 0 0 16px;
+            }
+
+            #i1{
+                width: 200px;
+                height: 100px;
+                background-color: rgb(243, 243, 111);
+                border-radius: 100px 100px 0 0;
+            }
+            #i2{
+                width: 200px;
+                height: 100px;
+                background-color: pink;
+                border-radius: 100px 100px 0 0;
+            }
+            #i3{
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 150px 100px 0 100px;
+                border-color: rgb(230, 173, 68) transparent transparent transparent;
+            }
+
+            #bread{
+                width: 200px;
+                height: 200px;
+                background: rgb(235, 156, 53);
+                border: 2px solid #555;
+                border-radius: 50%;
+                position: relative;
+            }
+            .brow{
+                width: 35px;
+                height: 10px;
+                border-top: 4px solid black;
+                border-radius: 50%;
+                position: relative;
+                top: 35px;
         
+            }
+
+
+
+        
+            
 
 
 
@@ -16,16 +91,25 @@
 
 
 
-        </stytle>
+        </style>
     </head>
     <body>
         <!--christmas tree-->
         <div id="t1"></div>
+        <div id="t2"></div>
+        <div id="t3"></div>
+        <div id="t4"></div>
 
+        <!--ice cream--><hr>
+        <div id="i1"></div>
+        <div id="i2"></div>
+        <div id="i3"></div>
 
-
-
-
-
+        <!--麵包超人--><hr>
+        <div id="bread">
+            <div id="b1" class="brow"></div>
+            <div id="b2" class="brow"></div>
+            
+        </div>
     </body>
 </html>
