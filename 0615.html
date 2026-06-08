@@ -3,16 +3,45 @@
         <title>期末作業</title>
         <style>
             body{
-                background: ("pic/背景圖.png");
-                background-size: 300px 210px;
+                margin: 0;
+                background: url("底圖.jpg");
+                background-size: cover;
+            }
+            #watermelon{
+                position: absolute;
+                width: 200px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+
             }
 
+            #score{
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                color: white;
+                font-size: 40px;
+            }
+            .knife{
+                position: absolute;
+                width: 60px;
+            }
         </style>
         <script>
+            let angle=0;
+            let score=0;
+            let knives=[];
+
+            function start(){
+                
+            }
 
         </script>
     </head>
-    <body>
+    <body onload="start()">
+    <div id="score">0</div>
+    <img src="西瓜.jpg" id="watermelon">
 
     </body>
 </html>

@@ -69,27 +69,72 @@
                 height: 10px;
                 border-top: 4px solid black;
                 border-radius: 50%;
-                position: relative;
+                position: absolute;
                 top: 35px;
         
             }
-
-
-
-        
+            #b1{
+                left: 50px;
+                transform: rotate(-15deg);
+            }
+            #b2{
+                right: 50px;
+                transform:rotate(15deg);
+            }
+            .eye{
+                width: 12px;
+                height: 30px;
+                background: black;
+                border-radius: 50%;
+                position: absolute;
+                top: 55px;
+            }
+            #eye1{
+                left: 70px;
+            }
+            #eye2{
+                right: 70px;
+            }
             
+            #cheek1{
+                width: 45px;
+                height: 45px;
+                background: orange;
+                border-radius: 50%;
+                position: absolute;
+                top: 85px;
+                left: 25px;
 
+            }
 
+            #nose{
+                width: 40px;
+                height: 40px;
+                background: red;
+                border-radius: 50%;
+                position: absolute;
+                top: 80px;
+                left: 80px;
+            }
+            #cheek2{
+                width: 45px;
+                height: 45px;
+                background: orange;
+                border-radius: 50%;
+                position: absolute;
+                top:85px;
+                right: 25px;
 
-
-
-
-
-
-
-
-
-
+            }
+            #mouth{
+                width: 70px;
+                height: 35px;
+                background: rgb(102, 3, 28);
+                border-radius: 0 0 40px 40px;
+                position: absolute;
+                bottom: 30px;
+                left: 65px;
+            }
 
         </style>
     </head>
@@ -109,7 +154,15 @@
         <div id="bread">
             <div id="b1" class="brow"></div>
             <div id="b2" class="brow"></div>
-            
+
+            <div id="eye1" class="eye"></div>
+            <div id="eye2" class="eye"></div>
+
+            <div id="cheek1"></div>
+            <div id="nose"></div>
+            <div id="cheek2"></div>
+
+            <div id="mouth"></div>
         </div>
     </body>
 </html>
