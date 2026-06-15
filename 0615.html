@@ -1,47 +1,135 @@
 <html>
-    <head>
-        <title>期末作業</title>
-        <style>
-            body{
-                margin: 0;
-                background: url("底圖.jpg");
-                background-size: cover;
-            }
-            #watermelon{
-                position: absolute;
-                width: 200px;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%,-50%);
+<head>
+<style>
+body{
+    margin:0;
+}
 
-            }
+#game{
+    width:100vw;
+    height:100vh;
+    background-image:url("背景圖.png");
+    background-size:cover;
+    position:relative;
+}
 
-            #score{
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                color: white;
-                font-size: 40px;
-            }
-            .knife{
-                position: absolute;
-                width: 60px;
-            }
-        </style>
-        <script>
-            let angle=0;
-            let score=0;
-            let knives=[];
+#fruit{
+    width:60px;
+    height:60px;
+    position:absolute;
+    top:0px;
+    left:200px;
+}
 
-            function start(){
-                
-            }
+#basket{
+    width:120px;
+    height:120px;
+    position:absolute;
+    bottom:20px;
+    left:200px;
+}
 
-        </script>
-    </head>
-    <body onload="start()">
-    <div id="score">0</div>
-    <img src="西瓜.jpg" id="watermelon">
+#score{
+    position:absolute;
+    top:20px;
+    left:20px;
+    font-size:30px;
+    color:white;
+}
 
-    </body>
+#time{
+    position:absolute;
+    top:20px;
+    right:20px;
+    font-size:30px;
+    color:white;
+}
+
+
+</style>
+
+<script>
+let fruitTop = 0;
+let fruitLeft = 200;
+let basketLeft = 200;
+let score = 0;
+let time = 60;
+
+let fruits = [
+    "images (1).jpg","images (2).jpg","images.jpg"
+];
+
+let game = setInterval(dropFruit,30);
+let timer = setInterval(countTime,1000);
+
+function dropFruit(){
+    fruitTop += 5;
+    document.getElementById("fruit").style.top = fruitTop + "px";
+
+
+    if(
+        fruitTop > 500 &&
+        fruitLeft > basketLeft &&
+        fruitLeft < basketLeft + 120
+    ){
+        score++;
+        document.getElementById("score").innerHTML = "分數：" + score;
+        resetFruit();
+    }
+
+  
+    if(fruitTop > 650){
+        resetFruit();
+    }
+}
+
+function resetFruit(){
+    fruitTop = 0;
+    fruitLeft = Math.floor(Math.random()*500);
+
+    document.getElementById("fruit").style.left = fruitLeft + "px";
+
+    let randomFruit = Math.floor(Math.random()*3);
+    document.getElementById("fruit").src = fruits[randomFruit];
+}
+
+function countTime(){
+    time--;
+    document.getElementById("time").innerHTML = "時間：" + time;
+
+    if(time <= 0){
+        clearInterval(game);
+        clearInterval(timer);
+
+        alert("遊戲結束！你的分數是：" + score);
+    }
+}
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key == "ArrowLeft"){
+        basketLeft -= 30;
+    }
+
+    if(event.key == "ArrowRight"){
+        basketLeft += 30;
+    }
+
+    document.getElementById("basket").style.left = basketLeft + "px";
+});
+</script>
+</head>
+
+<body>
+<div id="game">
+
+    <div id="score">分數：0</div>
+    <div id="time">時間：60</div>
+
+    <img id="fruit" src="images.jpg">
+
+    <img id="basket" src="籃子.jpg">
+
+</div>
+</body>
 </html>
